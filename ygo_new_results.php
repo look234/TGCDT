@@ -15,24 +15,16 @@ padding: 7px !important;
 echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 info-panel nopadding" style="position:fixed; top:50px;" id="SideMenu" >';
 echo '<div class="row-fluid no-gutters">';
 echo '<div id="SideMenuBox4">';
-if($_GET['user'] == ''){
-   echo 'My ';
-}else{
-   echo $_GET['user'] . "'s ";
-}
-if($_SESSION['myusername'] == $_GET['user']){
-   echo 'My ';
-}
-//echo ' ' . $languages_full[$_SESSION['language']] . ' ';
+
 switch($_SESSION['mylist']){
    case 'checklist':
-      echo 'Collection';
+      echo 'My Collection';
       break;
    case 'tradelist':
-      echo 'Trade List';
+      echo 'My Trade List';
       break;
    case 'wishlist':
-      echo 'Wish List';
+      echo 'My Wish List';
       break;
 }
 echo '<div id="SideMenuBox3Mini_2"></div>';

@@ -1,7 +1,7 @@
 <?php
-$some_name = session_name("some_name");
-session_set_cookie_params(0, '/', '.tgcdt.com');
-session_start();
+//$some_name = session_name("some_name");
+//session_set_cookie_params(0, '/', '.tgcdt.com');
+//session_start();
    header('Content-Type: text/html; charset=utf-8');
    $sessionVariables = array("Attribute","Type_1","Type_2","Level","Rank","Edition","Rarity","Card_Name","setName");
 

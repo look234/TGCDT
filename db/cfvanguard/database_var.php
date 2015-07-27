@@ -25,15 +25,11 @@ div.CardTextBox { padding: 5px; -webkit-border-radius: 5px; -moz-border-radius: 
 </style>
 
 <?php
-
-
 $some_name = session_name("some_name");
 session_set_cookie_params(0, '/', '.tgcdt.com');
 session_start();
 
 include_once "../../bwahaha.php";
-
-
 $db_name = "cfvanguard";
 $meta_tags = "ygo, yugioh, Yu-Gi-Oh, Yu-Gi-Oh!, YuGiOh!, checklist, database, card game, trading card, collectible card, TGCDT, The Giant Checklist Database Thing";
 $page_title = "TGCDT Yu-Gi-Oh!";
@@ -91,9 +87,6 @@ $search_values = array( "button_2" => "Grade",
 
 
 
-
-
-
 function detailCardInfoHeader($row, $language){
     echo '<strong> ' . $row['Set_Number'] . '</strong> ' . $row['EN_Set_Name'] . '<br/>';
     echo ' ' . $row['Rarity'];
@@ -102,12 +95,11 @@ function detailCardInfoHeader($row, $language){
     }
 }
 
-
-
 function detailCardInfo($row, $count, $temp_language){
+   global $db_name;
    echo "<div class='list modal-card-info'>";
       echo "<div style='width: 263px; display:table-cell;' >";
-      $tempPath_jpg = '/images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg';
+      $tempPath_jpg = '/home8/vinceoa2/public_html/tgcdt/db/' . $db_name . '/images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg';
 
       if(file_exists($tempPath_jpg)){
          echo '<img style="vertical-align: text-top;" src="images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg">';
@@ -120,13 +112,5 @@ function detailCardInfo($row, $count, $temp_language){
       echo '</div>';
    echo '</div>';
 }
-
-   //0.0 What?
-   //echo '</div>';
-   //echo '</div>';
-   //echo '</div>';
-
-
-
 
 ?>

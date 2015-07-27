@@ -1,14 +1,12 @@
 
-
 <?php
 
 $some_name = session_name("some_name");
 session_set_cookie_params(0, '/', '.tgcdt.com');
 session_start();
 
+include_once "../../bwahaha.php";
 $db_name = "ptcg";
-$db_username = "vinceoa2_ygo";
-$db_password = "ki_234_ki";
 $meta_tags = "ptcg, pokemon, Pocket Monsters, checklist, database, card game, trading card, collectible card, TGCDT, The Giant Checklist Database Thing";
 $page_title = "TGCDT Pokémon";
 $languages = array( 0 => "EN", 1 => "FR", 2 => "DE", 3 => "IT", 4 => "PT", 5 => "ES", 6 => "JA", 7 => "KO");
@@ -165,9 +163,10 @@ function detailCardInfoHeader($row, $language){
 }
 
 function detailCardInfo($row, $count, $temp_language){
+   global $db_name;
    echo "<div class='list modal-card-info'>";
       echo "<div style='width: 263px; display:table-cell;' >";
-      $tempPath_jpg = '/home8/vinceoa2/public_html/ptcg/images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg';
+      $tempPath_jpg = '/home8/vinceoa2/public_html/tgcdt/db/' . $db_name . '/images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg';
 
       if(file_exists($tempPath_jpg)){
          echo '<img style="vertical-align: text-top;" src="images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg">';

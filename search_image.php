@@ -1,15 +1,14 @@
 <?php
 $some_name = session_name("some_name");
-session_set_cookie_params(0, '/', '.tgcdt.com');
-session_start();
-   header("Content-type: text/html; charset=utf-8");
+//session_set_cookie_params(0, '/', '.tgcdt.com');
+//session_start();
+//   header("Content-type: text/html; charset=utf-8");
 ?>
 <?php include_once("analyticstracking.php") ?>
 
 
 
 <?php
-   include_once "/home8/vinceoa2/public_html/ygo/types.php";
    include_once "ygo_search_functions.php";
    include_once "database_var.php";
 
@@ -21,13 +20,7 @@ session_start();
    }
 
    mysql_select_db("vinceoa2_php1", $con);
-   if($_GET['user'] != ''){
-      $otherUsersJazz = 1;
-      $query1 = "SELECT * FROM ayn_users WHERE username LIKE '" . $_GET['user'] . "' ";
-   }else{
-      $otherUsersJazz = 0;
-      $query1 = "SELECT * FROM ayn_users WHERE username LIKE '" . $_SESSION['myusername'] . "' ";
-   }
+   $query1 = "SELECT * FROM ayn_users WHERE username LIKE '" . $_SESSION['myusername'] . "' ";
 
    $result1 = mysql_query($query1) or die(mysql_error()); 
    while($row = mysql_fetch_array($result1)){ 
@@ -54,7 +47,7 @@ session_start();
       printf("Connect failed: %s\n", mysqli_connect_error());
       exit();
    }
-
+   $temp_language = "";
    $result = mysql_query($query) or die(mysql_error()); 
    $count = 0;
    echo '<a name="id3" style="position:relative; top:-55px;" />';

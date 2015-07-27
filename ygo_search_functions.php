@@ -113,16 +113,13 @@ function makeRuby($kanji,$hiragana){
    }
 }
 
-function userAmountSimple($set_num, $ed_num, $rarity2){
+function userAmountSimple($card_id){
    global $data;
 
-   $temp = "$set_num|$ed_num|$rarity2";
-   $temp2 = "[$set_num][$ed_num][$rarity2]";
-
-   if($data[$set_num][$ed_num][$rarity2] > 0){
-      return TRUE; 
-   }else{
-      return FALSE;
+   if(array_key_exists( $card_id, $data)){
+      if($data[$card_id] > 0){
+         return TRUE; 
+      }
    }
 }
 
@@ -146,19 +143,15 @@ function userAmount($set_num, $ed_num, $rarity2){
 
 function userAmount2($card_id){
    global $data;
-
-   $temp = "$set_num|$ed_num|$rarity2";
-   $temp2 = "[$set_num][$ed_num][$rarity2]";
-
-   if(array_key_exists($card_id,$data)){
-      $temp3 = $data[$card_id]; 
-   }else{
-      $temp3 = 0;
+   $count = 0;
+   if(array_key_exists( $card_id, $data)){
+      if($data[$card_id] > 0){
+         $count = $data[$card_id];
+      }
    }
 
-
-   echo '<button type="button" class="btn btn-default text-center" id="cardCounts" name="' . $card_id . '" value="' . $temp3 . '" aria-label="..."><strong>';
-   echo $temp3;
+   echo '<button type="button" class="btn btn-default text-center" id="cardCounts" name="' . $card_id . '" value="' . $count . '" aria-label="..."><strong>';
+   echo $count;
    echo '</strong></button>';
 }
 
