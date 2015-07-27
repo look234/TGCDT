@@ -1,6 +1,8 @@
 # TGCDT
 The Giant Checklist Database Thing
 
+This is a short list of many of the changes I need to make and updates to this project. The list is much larger than this, this is just what I remember at the moment.
+
 To do:
 * Finish initial Set List display.
 * Combine test_card_text_grab.php into database_var.php, this was initially seperated to test speeding up loading times by calling for card text only when needed.
