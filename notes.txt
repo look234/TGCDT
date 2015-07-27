@@ -1,0 +1,5 @@
+In main directory I update the php.ini file at open_basedir from
+open_basedir = 
+to
+open_basedir = /home8/vinceoa2/public_html/tgcdt/
+to allow for calling a central repository of .php files from any of the sub-domains. - Vincent June 22, 2014
