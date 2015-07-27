@@ -7,11 +7,12 @@ To do:
 * Update mysql functions to mysqli.
 * Check for any unsecure $_POST variables and fix them.
 * Reduce repeated DB connections.
-* Figure out workaround for the repeated include files in each Series directory. This is currently donw to allow the jQuery load() calls to access the file in the parent directory. Looking into Access Control CORS for solutions https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS .
+* Figure out workaround for the repeated include files in each Series directory. This is currently done to allow the jQuery load() calls to access the files in the parent directory. Looking into Access Control CORS for solutions https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS .
 * Implement the automatic admin card adder to all basic Series. PTCG and YGO currently have custom built card adders.
 * Build initail user setting page to allow for specific uasge style.
 * Build blank tempalte folder to initialize future Series.
-
+* Add an advanced search feature that will load similar to an offcanvas to allow for a more detailed search. These will probably have to be designed individually like the card text displays.
+* Start logging searches and user card adds.
 
 Sometime in the future:
 * Add more Series. -_-'
