@@ -21,8 +21,10 @@ span#num {
 <form method="post" action="">
 <?php
 
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
 
-$con = mysql_connect("localhost","vinceoa2_ygo","ki_234_ki");
+   $con = mysql_connect("localhost", $db_username_write, $db_password_write);
 if (!$con){
   die('Could not connect: ' . mysql_error());
 }else{

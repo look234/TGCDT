@@ -31,11 +31,9 @@ $some_name = session_name("some_name");
 session_set_cookie_params(0, '/', '.tgcdt.com');
 session_start();
 
-
+include_once "../../bwahaha.php";
 
 $db_name = "kaijudo";
-$db_username = "vinceoa2_read";
-$db_password = "Luffy_234";
 $meta_tags = "ygo, yugioh, Yu-Gi-Oh, Yu-Gi-Oh!, YuGiOh!, checklist, database, card game, trading card, collectible card, TGCDT, The Giant Checklist Database Thing";
 $page_title = "TGCDT Kaijudo";
 

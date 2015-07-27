@@ -516,11 +516,10 @@ span.theIDs {font-size:2em;}
 <body style="font-family:Verdana; font-size:0.75em; background-color:black;">
 
 <?php
-$db_name = "ptcg";
-$db_username = "vinceoa2_ygo";
-$db_password = "ki_234_ki";
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
 
-   $con2 = mysql_connect("localhost",$db_username,$db_password);
+   $con2 = mysql_connect("localhost", $db_username_write, $db_password_write);
    if (!$con2){
       die('Could not connect: ' . mysql_error());
    }else{

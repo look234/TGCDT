@@ -1,3 +1,5 @@
+
+
 <?php
 
 $some_name = session_name("some_name");

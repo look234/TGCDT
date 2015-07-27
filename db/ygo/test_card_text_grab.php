@@ -1,7 +1,7 @@
 <?php
+include_once "database_var.php";
 
-
-   $con = mysql_connect("localhost","vinceoa2_read","Luffy_234");
+   $con = mysql_connect("localhost",$db_username,$db_password);
    if (!$con){
       die('Could not connect: ' . mysql_error());
    }else{

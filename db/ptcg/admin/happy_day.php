@@ -6,9 +6,13 @@ Multiverse ID: <input name="multiverseid" type="text" size="20"></input>
 
 <?php
 
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
+
+
 
 function checkAlready($search_card_name5){
-$con5 = mysql_connect("localhost","vinceoa2_ygo","ki_234_ki");
+   $con5 = mysql_connect("localhost", $db_username_write, $db_password_write);
 if (!$con5){
   die('Could not connect: ' . mysql_error());
 }else{

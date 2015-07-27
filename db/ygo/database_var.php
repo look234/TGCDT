@@ -24,7 +24,7 @@ div.CardTextBox { padding: 5px; -webkit-border-radius: 5px; -moz-border-radius: 
 
 <?php
 
-
+include "../../bwahaha.php";
 $some_name = session_name("some_name");
 session_set_cookie_params(0, '/', '.tgcdt.com');
 session_start();
@@ -32,8 +32,6 @@ session_start();
 
 
 $db_name = "ygo";
-$db_username = "vinceoa2_read";
-$db_password = "Luffy_234";
 $meta_tags = "ygo, yugioh, Yu-Gi-Oh, Yu-Gi-Oh!, YuGiOh!, checklist, database, card game, trading card, collectible card, TGCDT, The Giant Checklist Database Thing";
 $page_title = "TGCDT Yu-Gi-Oh!";
 $languages = array( 0 => "EN", 1 => "FR", 2 => "DE", 3 => "IT", 4 => "PT", 5 => "SP", 6 => "JP", 6 => "JA", 7 => "KR", 8 => "AE", 8 => "TC");

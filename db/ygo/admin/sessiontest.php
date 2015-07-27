@@ -10,7 +10,10 @@ echo $_SESSION['mylist'] . "<br/>";
 echo $_SESSION['language'] . "<br/>";
 echo $_SESSION['onlyMine'] . "<br/>";
 
-$link = mysqli_connect('localhost', 'vinceoa2_ygo', 'ki_234_ki', 'vinceoa2_ygo');
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
+
+$link = mysqli_connect('localhost', $db_username_write, $db_password_write, 'vinceoa2_ygo');
 
 if (!$link) {
     die('Connect Error (' . mysqli_connect_errno() . ') '
@@ -34,7 +37,7 @@ echo $digest;
 ?>
 <?php
 
-   $con = mysql_connect("localhost","vinceoa2_ygo","ki_234_ki");
+   $con = mysql_connect("localhost", $db_username_write, $db_password_write);
    if (!$con){
       die('Could not connect: ' . mysql_error());
    }else{

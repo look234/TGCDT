@@ -27,6 +27,7 @@ var $text_s = "";
 var $showOptions ="";
 
 $(document).ready(function(){
+
    var buttonName = $('input#search_style_again').val();
    var subdomain = $('input#subdomain').val();
    var temp_session_lang = $('input#temp_session_lang').val();
@@ -286,6 +287,10 @@ function scrollToAnchor(aid){
     var aTag = $("a[name='"+ aid +"']");
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
+
+
+
+
 
 
 

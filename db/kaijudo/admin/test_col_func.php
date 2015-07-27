@@ -1,11 +1,10 @@
 <?php
 
-    $db_name = "kaijudo";
-    $series_name = "KAIJUDO";
-    $db_username = "vinceoa2_ygo";
-    $db_password = "ki_234_ki";
+   $series_name = "KAIJUDO";
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
 
-    $con2 = mysql_connect("localhost",$db_username,$db_password);
+   $con2 = mysql_connect("localhost", $db_username_write, $db_password_write);
     if (!$con2){
         die('Could not connect: ' . mysql_error());
     }else{

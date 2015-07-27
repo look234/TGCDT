@@ -13,7 +13,10 @@ $some_name = session_name("some_name");
 session_set_cookie_params(0, '/', '.tgcdt.com');
 session_start();
 
-$con = mysql_connect("localhost","vinceoa2_ygo","ki_234_ki");
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
+
+   $con = mysql_connect("localhost", $db_username_write, $db_password_write);
 if (!$con){
   die('Could not connect: ' . mysql_error());
 }else{

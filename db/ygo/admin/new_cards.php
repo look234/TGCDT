@@ -3,6 +3,8 @@ $some_name = session_name("some_name");
 session_set_cookie_params(0, '/', '.tgcdt.com');
 session_start();
    header("Content-type: text/html; charset=utf-8");
+   include_once "../database_var.php";
+   include_once "../../../bwahaha.php";
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
@@ -451,11 +453,9 @@ span.theIDs {font-size:2em;}
 <body style="font-family:Verdana; font-size:0.75em; background-color:black;">
 
 <?php
-$db_name = "ygo";
-$db_username = "vinceoa2_ygo";
-$db_password = "ki_234_ki";
 
-   $con2 = mysql_connect("localhost",$db_username,$db_password);
+
+   $con2 = mysql_connect("localhost", $db_username_write, $db_password_write);
    if (!$con2){
       die('Could not connect: ' . mysql_error());
    }else{
