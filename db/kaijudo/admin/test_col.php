@@ -70,6 +70,7 @@ $(document).ready(function(){
          if(statusTxt=="error")
             console.log("error");
       });
+      $("#CARDSOutput").empty();
    });
 
    $(document).on("myCustomEvent", 'body', function() {

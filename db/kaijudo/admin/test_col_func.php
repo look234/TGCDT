@@ -45,8 +45,13 @@ function buildFields($series_name, $table_name){
                 echo $temp_row . ' <input type="text" name="' . $row['Field'] . '" id="' . $row['Field'] . '" size="';
                 while($row2 = mysql_fetch_assoc($result2)){
                     if($row2['MAX(LENGTH(' . $row['Field'] . '))'] != 0){
-                        $temp_length += ($row2['MAX(LENGTH(' . $row['Field'] . '))']) / 2;
-                        echo ($row2['MAX(LENGTH(' . $row['Field'] . '))']) / 2 . '" value=""';
+                        if($row2['MAX(LENGTH(' . $row['Field'] . '))'] > 100){
+                           $temp_length += ($row2['MAX(LENGTH(' . $row['Field'] . '))']);
+                           echo '100" value=""';
+                        }else{
+                           $temp_length += ($row2['MAX(LENGTH(' . $row['Field'] . '))']);
+                           echo ($row2['MAX(LENGTH(' . $row['Field'] . '))']) . '" value=""';
+                        }
                     }else{
                         $temp_length += 5;
                         echo "5";
@@ -84,7 +89,7 @@ function searchFields($series_name, $table_name, $search_info){
               $query .= " " . $row2['Field'] . " = " . $search_info . " ";
            }elseif($row2['Type'] != 'int(11)' && !is_numeric($search_info)){
               $count++;
-              $query .= " " . $row2['Field'] . " LIKE '%" . $search_info . "%' ";
+              $query .= " " . $row2['Field'] . " LIKE '" . $search_info . "%' ";
            }else{
               $count++;
               $skip = 1;

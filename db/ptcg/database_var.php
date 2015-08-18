@@ -1,4 +1,3 @@
-
 <?php
 
 $some_name = session_name("some_name");
@@ -53,13 +52,15 @@ $sort_values = array( "Name" => " ORDER BY EN_Name, Prefix, Suffix, Release_Date
 
 $master_query = "SELECT * FROM 
 ( Select * FROM PTCG_CARDS as T1
-INNER JOIN PTCG_DATA as T2 ON T1.Data_ID = T2.Card_Data_ID
-INNER JOIN PTCG_TEXT as T3 ON T1.Text_ID = T3.Card_TEXT_ID
+INNER JOIN PTCG_DATA_2 as T2 ON T1.Data_ID = T2.Card_Data_ID
 INNER JOIN PTCG_COLLECT as T4 ON T1.Collect_ID = T4.Card_Collect_ID WHERE 1) as CARDS
 INNER JOIN ( Select *, GROUP_CONCAT(EN_Set_Name SEPARATOR '|') as magic, GROUP_CONCAT(Main_Set_ID SEPARATOR '|'), GROUP_CONCAT(Release_Date SEPARATOR '|') FROM PTCG_COMPLETE as T5
 INNER JOIN PTCG_SETS as T6 ON T5.Set_ID = T6.Main_Set_ID GROUP BY Card_ID) as COMPLETE
 ON CARDS.Card_ID = COMPLETE.Card_ID
 WHERE (";
+
+//Temporarily removing this line INNER JOIN PTCG_TEXT as T3 ON T1.Text_ID = T3.Card_TEXT_ID to see
+//if this increases query speed.
 
 $search_values = array( "button_1" => "Stage",
                         "button_2" => "HP",
@@ -69,7 +70,7 @@ $search_values = array( "button_1" => "Stage",
                         "button_6" => "Artist",
                         "button_7" => "Card_Language",
                         "button_8" => "Holo",
-                        "Card_Name" => array( 0 => "EN_Name", 1 => "magic"),
+                        "Card_Name" => array( 0 => "EN_Name", 1 => "Set_Number", 1 => "EN_Set_Name"),
                         "button_c_1" => array( 0 => "Type_1", 1 => "Type_2"),
                         "button_c_2" => array( 0 => "Weakness_1", 1 => "Weakness_2"));
 

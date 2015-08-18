@@ -14,7 +14,7 @@ div#SideMenu { height:100%; border-top:2px solid #363636; top:50px; background-c
 
 div#SideMenuBox1 { padding:5px; }
 
-div#SideMenuBox4 { padding:5px; background-color:#363636; color:white; border-bottom:2px solid #363636; font-family:Verdana; font-size:0.9em; text-align:center; }
+div#SideMenuBox4 { padding:5px; background-color:#363636; color:white; border-bottom:2px solid #363636; font-family:Verdana; font-size:0.9em; /*text-align:center;*/ }
 
 
 span.hidden {visibility:hidden; font-size:0px;}

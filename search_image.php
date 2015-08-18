@@ -42,6 +42,7 @@ $some_name = session_name("some_name");
    
    include_once "ygo_search_query.php";
 
+
    $link = mysqli_connect('localhost', 'vinceoa2_ygo', 'ki_234_ki', 'vinceoa2_ygo');
    if (mysqli_connect_errno()) {
       printf("Connect failed: %s\n", mysqli_connect_error());
@@ -121,15 +122,11 @@ $some_name = session_name("some_name");
               break;
          }
 
-         $tempPath_jpg = '/home8/vinceoa2/public_html/' . $db_name . '/images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg';
+
+
          $tempPath2 = '/home8/vinceoa2/public_html/tgcdt/db/' . $db_name . '/images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg';
 
          if(file_exists($tempPath2)){
-            echo '<img class="lazy img-responsive" style="padding: 0px;" data-toggle="modal" data-target="#Modal_' . $count . '" src="images/back1.png" image_list" data-original="images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg" alt="" width="250px" height="250px" />';
-            echo '<noscript>';
-               echo '<img class="img-responsive" style="padding: 0px;" data-toggle="modal" data-target="#Modal_' . $count . '" src="images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg" />';
-            echo '</noscript>';
-         }elseif(file_exists($tempPath_jpg)){
             echo '<img class="lazy img-responsive" style="padding: 0px;" data-toggle="modal" data-target="#Modal_' . $count . '" src="images/back1.png" image_list" data-original="images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg" alt="" width="250px" height="250px" />';
             echo '<noscript>';
                echo '<img class="img-responsive" style="padding: 0px;" data-toggle="modal" data-target="#Modal_' . $count . '" src="images/' . $temp_language . '_cards/' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'] . '.jpg" />';

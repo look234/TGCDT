@@ -15,7 +15,16 @@ padding: 7px !important;
 echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 info-panel nopadding" style="position:fixed; top:50px;" id="SideMenu" >';
 echo '<div class="row-fluid no-gutters">';
 echo '<div id="SideMenuBox4">';
-
+echo '<div id="compareCollectionButton" style="display: table-cell; left: 0px; cursor: pointer;">';
+   if($_SESSION['myusername'] != ''){
+      if($_SESSION['user_avatar'] != '') {
+         echo '<img src="http://tgcdt.com/forum/download/file.php?avatar=' . $_SESSION['user_avatar'] . '" id="userImage" width="50px" height="50px" align="top" style=" padding:0px; margin:0px;" />';
+      }else{
+         echo '<img src="http://vincentleith.com/user_data/1_Bob/1.png" id="userImage" width="50px" height="50px" align="top"/>';
+      }
+   }
+echo '</div>';
+echo '<div style="display: table-cell; position: absolute; top: 10px; padding-left: 10px; left: 55px;">';
 switch($_SESSION['mylist']){
    case 'checklist':
       echo 'My Collection';
@@ -27,7 +36,8 @@ switch($_SESSION['mylist']){
       echo 'My Wish List';
       break;
 }
-echo '<div id="SideMenuBox3Mini_2"></div>';
+echo '<div id="SideMenuBox3Mini_2">(0 of 0) 0%</div>';
+echo '</div>';
 echo '</div>'; // SideMenuBox4
 
 echo '<div id="SideMenuBox1">';

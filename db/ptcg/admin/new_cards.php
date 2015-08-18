@@ -519,6 +519,7 @@ span.theIDs {font-size:2em;}
    include_once "../database_var.php";
    include_once "../../../bwahaha.php";
 
+
    $con2 = mysql_connect("localhost", $db_username_write, $db_password_write);
    if (!$con2){
       die('Could not connect: ' . mysql_error());
@@ -528,7 +529,7 @@ span.theIDs {font-size:2em;}
    mysql_select_db("vinceoa2_" . $db_name, $con2);
 echo '<div class="list Energy">';
 echo '<span>Card Number (Printed)</span> <input type="text" id="card_num"> </input> <span>Name</span> <input type="text" id="en_name">';
-
+   echo $db_username_write;
    echo '<br/><span class="filterLabels">Set Language</span>';
    echo '<select id="lang" name="Set Language" >';
    echo '<option value=""></option>';

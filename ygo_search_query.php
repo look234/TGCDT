@@ -11,26 +11,20 @@ foreach($search_values as $key => $top_value){
       foreach($_POST[$key] as $value){
          if($value != ""){
             $value = mysql_real_escape_string($value);
-            if($key == "Edition"){
-               $query .= " ( " . $top_value[0] . " = '" . $value . "' AND " . $top_value[1] . " != '" . $value . "' ) OR ( " . $top_value[0] . " != '" . $value . "' AND " . $top_value[1] . " = '" . $value . "' ) ";
-               if(count($_POST[$key]) > 1){
-                  $query .= " OR ";
-               }
-            }elseif(is_array($top_value)){
+            if(is_array($top_value)){
                foreach($top_value as $low_key => $low_value){
                   $query .= " " . $low_value . " LIKE '%" . $value . "%' ";
-                  //$query .= " " . $low_value . " LIKE '" . $value . "' ";
                   if($low_key < (count($top_value) -1 )){
                      $query .= " OR ";
                   }
                }
                if(count($_POST[$key]) > 1){
                   if($value != end($_POST[$key])){
+                     //$query .= " ) AND ( ";
                      $query .= " ) AND ( ";
                   }
                }
             }else{
-               //$query .= " " . $top_value . " LIKE '%" . $value . "%' ";
                $query .= " " . $top_value . " LIKE '" . $value . "' ";
                if(count($_POST[$key]) > 1){
                   $query .= " OR ";
@@ -39,7 +33,7 @@ foreach($search_values as $key => $top_value){
          }else{
             if(is_array($top_value)){
                $query .= " " . $top_value[0] . " LIKE '%' ";
-            }else{
+           }else{
                $query .= " " . $top_value . " LIKE '%' ";
             }
          }

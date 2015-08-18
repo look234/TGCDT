@@ -58,15 +58,15 @@ $button_values = array( "button_1" => array( 0 => "Card_Type", 1 => "Card Type",
                         "button_5" => array( 0 => "Rarity", 1 => "Rarity", 2 => "SELECT DISTINCT Rarity FROM KAIJUDO_CARDS ORDER BY Rarity ASC"));
 
 
-$complex_button_values = array("button_c_1" => array( 0 => "Race", 1 => "Race", 2 => "1", 3 => "2", 4 => "", 5 => "KAIJUDO_DATA"),
+$complex_button_values = array("button_c_1" => array( 0 => "Race", 1 => "Race", 2 => "1", 3 => "4", 4 => "", 5 => "KAIJUDO_DATA"),
                                "button_c_2" => array( 0 => "Civilization", 1 => "Civilization", 2 => "1", 3 => "2", 4 => "", 5 => "KAIJUDO_DATA"));
 
 
 /* Search Specific */
 
 $sort_values = array( "Name" => " ORDER BY EN_Name, Set_Number",
-                      "Set Number" => " ORDER BY Set_Number, Release_Date",
-                      "Release Date" => " ORDER BY Release_Date, Set_Number");
+                      "Set Number" => " ORDER BY length(Set_Number), Release_Date",
+                      "Release Date" => " ORDER BY Release_Date, length(Set_Number)");
 
 $master_query = "SELECT * FROM 
 ( Select * FROM KAIJUDO_CARDS as T1
@@ -83,9 +83,9 @@ $search_values = array( "button_2" => "Level",
                         "button_3" => "Power",
                         "button_4" => "Artist",
                         "button_5" => "Rarity",
-                        "button_c_1" => array( 0 => "Race_1", 1 => "Race_2"),
+                        "button_c_1" => array( 0 => "Race_1", 1 => "Race_2", 2 => "Race_3", 3 => "Race_4"),
                         "button_c_2" => array( 0 => "Civilization_1", 1 => "Civilization_2"),
-                        "Card_Name" => array( 0 => "EN_Name", 1 => "Set_Number"));
+                        "Card_Name" => array( 0 => "EN_Name", 1 => "Set_Number", 2 => "EN_Set_Name"));
 
 
 
@@ -97,6 +97,7 @@ function detailCardInfoHeader($row, $language){
     if($row['Holo'] != ""){
        echo ' <em>(' . $row['Holo'] . ')</em> ';
     }
+echo '<br/>' . $row['DB_Card_Num'] . '_' . $row['Edition'] . '_' . $row['Card_ID'];
 }
 
 

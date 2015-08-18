@@ -1,7 +1,7 @@
 <?php
-$some_name = session_name("some_name");
-session_set_cookie_params(0, '/', '.tgcdt.com');
-session_start();
+//$some_name = session_name("some_name");
+//session_set_cookie_params(0, '/', '.tgcdt.com');
+//session_start();
    header("Content-type: text/html; charset=utf-8");
 ?>
 
@@ -23,41 +23,6 @@ session_start();
       mysql_set_charset('utf8');
    }
    mysql_select_db("vinceoa2_" . $db_name, $con2);
-
-$face_array = [ "( .o.)", "( `·´ )", "( ° ͜ ʖ °)", "( ͡° ͜ʖ ͡°)", "( ﾟヮﾟ)", "(\\/)(°,,,°)(\\/)", "(¬º-°)¬", "(¬‿¬)", "(´・ω・)っ", "(ʘ‿ʘ)", "(͡° ͜ʖ ͡°)", "(ಠ‿ಠ)", "(ಠ⌣ಠ)", "(ง ͠° ͟ل͜ ͡°)ง", "(ง ͡ʘ ͜ʖ ͡ʘ)ง", "(ง°ل͜°)ง", "(ง⌐□ل͜□)ง", "(ღ˘⌣˘ღ)", "(ᵔᴥᵔ)", "(•ω•)", "(•◡•)/", "(⊙ω⊙)", "(⌐■_■)", "(─‿‿─)", "(╯°□°）╯", "(◕‿◕)", "(☞ﾟ∀ﾟ)☞", "(❍ᴥ❍ʋ)", "(っ◕‿◕)っ", "(づ｡◕‿‿◕｡)づ", "(ノ・∀・)ノ", "(｀◔ ω ◔´)", "(｡◕‿‿◕｡)", "(ﾉ◕ヮ◕)ﾉ", "=^.^=", "| (• ◡•)|", "~(˘▾˘~)", "ʅʕ•ᴥ•ʔʃ", "ʕ´•ᴥ•`ʔ", "ʕ•ᴥ•ʔ", "ʘ‿ʘ", "͡° ͜ʖ ͡°", "ಠ‿ಠ", "ಠ⌣ಠ", "ง ͠° ل͜ °)ง", "༼ つ ◕_◕ ༽つ", "ᕕ( ᐛ )ᕗ", "ᕙ(⇀‸↼‶)ᕗ", "ᕙ༼ຈل͜ຈ༽ᕗ", "≧☉_☉≦", "┌( ಠ_ಠ)┘", "╚(ಠ_ಠ)=┐", "◔ ⌣ ◔", "◕‿↼", "◕‿◕", "☜(⌒▽⌒)☞", "☼.☼", "♥‿♥", "✌(-‿-)✌", "〆(・∀・＠)", "ヽ༼° ͟ل͜ ͡°༽ﾉ", "ヽ༼ʘ̚ل͜ʘ̚༽ﾉ", "ヽ༼ຈل͜ຈ༽ง", "ヽ༼ຈل͜ຈ༽ﾉ", "ヽ༼Ὸل͜ຈ༽ﾉ", "ヾ(⌐■_■)ノ", "꒰･◡･๑꒱", "｡◕‿◕｡", "ʕノ◔ϖ◔ʔノ", "ಠﭛಠ", "(๑>ᴗ<๑)", "(✌ﾟ∀ﾟ)☞", "ಥ‿ಥ", "ヾ(´￢｀)ﾉ", "(ᵒ̤̑ ₀̑ ᵒ̤̑)", "\_(ʘ_ʘ)_/" ];
-
-function energyReplace($string){
-   $string = str_replace("[[Water]]", "<img src='Water.png' height='15px' />", $string);
-   $string = str_replace("[[Colorless]]", "<img src='Colorless.png' height='15px' />", $string);
-   $string = str_replace("[[Fairy]]", "<img src='Fairy.png' height='15px' />", $string);
-   $string = str_replace("[[Fighting]]", "<img src='Fighting.png' height='15px' />", $string);
-   $string = str_replace("[[Fire]]", "<img src='Fire.png' height='15px' />", $string);
-   $string = str_replace("[[Grass]]", "<img src='Grass.png' height='15px' />", $string);
-   $string = str_replace("[[Lightning]]", "<img src='Lightning.png' height='15px' />", $string);
-   $string = str_replace("[[Psychic]]", "<img src='Psychic.png' height='15px' />", $string);
-   $string = str_replace("[[Metal]]", "<img src='Metal.png' height='15px' />", $string);
-   $string = str_replace("[[Darkness]]", "<img src='Darkness.png' height='15px' />", $string);
-   $string = str_replace("[[Dragon]]", "<img src='Dragon.png' height='15px' />", $string);
-   $string = str_replace("[[None]]", "<img src='None.png' height='15px' />", $string);
-   $string = str_replace("(", "<em>(", $string);
-   $string = str_replace(")", ")</em>", $string);
-   return $string;
-}
-
-function typeReplace($string){
-   $string = str_replace("Water", "<img src='Water.png' />", $string);
-   $string = str_replace("Colorless", "<img src='Colorless.png' />", $string);
-   $string = str_replace("Fairy", "<img src='Fairy.png' />", $string);
-   $string = str_replace("Fighting", "<img src='Fighting.png' />", $string);
-   $string = str_replace("Fire", "<img src='Fire.png' />", $string);
-   $string = str_replace("Grass", "<img src='Grass.png' />", $string);
-   $string = str_replace("Lightning", "<img src='Lightning.png' />", $string);
-   $string = str_replace("Psychic", "<img src='Psychic.png' />", $string);
-   $string = str_replace("Metal", "<img src='Metal.png' />", $string);
-   $string = str_replace("Darkness", "<img src='Darkness.png' />", $string);
-   $string = str_replace("Dragon", "<img src='Dragon.png' />", $string);
-   return $string;
-}
 
 function langReplace($string){
             switch($string){
@@ -106,6 +71,10 @@ function langReplace($string){
             }
    //return $temp_language;
 }
+
+
+
+
 if($_POST['lang_switch'] == "okay"){
    echo '<span class="filterLabels">Set Name</span>';
    echo '<select id="set_id" name="Set_ID" >';
@@ -122,6 +91,7 @@ if($_POST['lang_switch'] == "okay"){
       }
       echo '</select>';
 }
+
 
 if($_POST['new_set'] == "new_set"){
    echo '<br/><span>Set Abbr</span> <input type="text" id="set_abbr"> </input>';
@@ -503,6 +473,7 @@ if($_POST['search_attack_name'] == "search_attack_name_1"){
    }
    //echo $search_attack_name_query;
 
+
    $result2 = mysql_query($search_attack_name_query);
 
    while($row2 = mysql_fetch_array($result2)){ 
@@ -717,9 +688,6 @@ WHERE EN_Name LIKE '" . $_POST['en_name'] . "%' AND Set_Language LIKE '" . $_POS
       echo "<br/>";
    }
 }
-
-
-
 
 ?>
 </html>

@@ -88,7 +88,7 @@ $search_values = array( "button_2" => "Type",
                         "button_5" => "Rank",
                         "button_6" => "Rarity",
                         "button_7" => "Card_Language",
-                        "Card_Name" => array( 0 => "EN_Name", 1 => "Set_Number"),
+                        "Card_Name" => array( 0 => "EN_Name", 1 => "Set_Number", 2 => "EN_Set_Name"),
                         "button_c_2" => array( 0 => "Ability_1", 1 => "Ability_2", 2 => "Ability_3"),
                         "button_c_1" => array( 0 => "Color_1", 1 => "Color_2"));
 
